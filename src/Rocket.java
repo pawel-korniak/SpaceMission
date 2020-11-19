@@ -14,7 +14,7 @@ public class Rocket implements SpaceShip{
         }
     }
     public void carry(Item item){
-
+        carry+= item.weight;
     }
 
 }

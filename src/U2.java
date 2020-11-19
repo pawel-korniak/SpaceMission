@@ -17,4 +17,9 @@ public class U2 extends Rocket{
             return true;
         }
     }
+
+    U2(){
+        carry=0;
+        carryLimit=11000;
+    }
 }

@@ -17,4 +17,8 @@ public class U1 extends Rocket {
             return true;
         }
     }
+    U1(){
+        carry=0;
+        carryLimit=8000;
+    }
 }

@@ -21,7 +21,26 @@ public class Simulation {
             }
         return itemsList;
         }
+    ArrayList <U1> loadU1(ArrayList<Item> itemsList){
+        ArrayList uRocketList = new ArrayList();
+        while(itemsList.size()>0){
+            U1 uRocket = new U1();
 
+            int i=0;
+            while((uRocket.carry < uRocket.carryLimit)&&(i< itemsList.size())) {
+
+
+                if (uRocket.canCarry(itemsList.get(i))) {
+                    uRocket.carry(itemsList.get(i));
+                    itemsList.remove(i);
+                } else i++;
+
+            }
+            uRocketList.add(uRocket);
+        }
+
+        return uRocketList;
+    }
 
 
     }
