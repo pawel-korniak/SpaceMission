@@ -1,5 +1,6 @@
 public class U2 extends Rocket{
     //int carry, carryLimit;
+
     public boolean launch() {
         double chance = 4.0 * (carry / carryLimit);
         if((Math.random()*100)<=chance) {
@@ -21,5 +22,6 @@ public class U2 extends Rocket{
     U2(){
         carry=0;
         carryLimit=11000;
+        cost = 120;
     }
 }

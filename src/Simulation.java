@@ -6,10 +6,16 @@ import java.util.Scanner;
 public class Simulation {
 
 
-    ArrayList loadItems() throws FileNotFoundException {
+    ArrayList loadItems(int phase) throws FileNotFoundException {
         ArrayList itemsList;
         itemsList = new ArrayList();
-        File file1 = new File("phase-1.txt");
+        String src;
+        if(phase == 1){
+            src = "phase-1.txt";
+        }else {
+            src = "phase-2.txt";
+        }
+        File file1 = new File(src);
         Scanner scanner = new Scanner(file1);
             while(scanner.hasNextLine()){
             String line= scanner.nextLine();
@@ -42,6 +48,36 @@ public class Simulation {
         return uRocketList;
     }
 
+    ArrayList loadU2(ArrayList<Item> itemsList){
+        ArrayList uRocketList = new ArrayList();
+        while(itemsList.size()>0){
+            U2 uRocket = new U2();
 
+            int i=0;
+            while((uRocket.carry < uRocket.carryLimit)&&(i< itemsList.size())) {
+
+
+                if (uRocket.canCarry(itemsList.get(i))) {
+                    uRocket.carry(itemsList.get(i));
+                    itemsList.remove(i);
+                } else i++;
+
+            }
+            uRocketList.add(uRocket);
+        }
+
+        return uRocketList;
     }
+
+int runSimulation(ArrayList<Rocket> uRocketList){
+        int budget=0;
+        for(Rocket uRocket : uRocketList){
+            do{
+                budget += uRocket.cost;
+            } while ((!(uRocket.launch()&&uRocket.land())));
+        }
+        return budget;
+}
+
+}
 

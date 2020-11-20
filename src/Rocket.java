@@ -1,5 +1,5 @@
 public class Rocket implements SpaceShip{
-    int carry, carryLimit;
+    int carry, carryLimit, cost;
     public boolean launch(){
         return true;
     }
