@@ -9,49 +9,49 @@ public class Simulation {
     ArrayList loadItems(int phase) throws FileNotFoundException {
         ArrayList itemsList;
         itemsList = new ArrayList();
-        String src;
+        String src;                             //directory of txt (phase)
         if(phase == 1){
             src = "phase-1.txt";
         }else {
             src = "phase-2.txt";
-        }
+        }                            ///////////        later maybe more phases
         File file1 = new File(src);
         Scanner scanner = new Scanner(file1);
             while(scanner.hasNextLine()){
             String line= scanner.nextLine();
-            String [] arrOfStr = line.split("=",2) ;
+            String [] arrOfStr = line.split("=",2) ;        //split lines from txt to get name and weight
 
-            int number = Integer.parseInt(arrOfStr[1]);
-            Item item = new Item(arrOfStr[0],number );
-            itemsList.add(item);
+            int number = Integer.parseInt(arrOfStr[1]);                 //right string to int (weight)
+            Item item = new Item(arrOfStr[0],number );                  //item constructor with name and weight
+            itemsList.add(item);                                        //adding item to list
             }
-        return itemsList;
+        return itemsList;                                               //returns list of all items from txt
         }
-    ArrayList loadU1(ArrayList<Item> itemsList){
-        ArrayList uRocketList = new ArrayList();
-        while(itemsList.size()>0){
-            U1 uRocket = new U1();
+    ArrayList loadU1(ArrayList<Item> itemsList){                        // loading list of items to rockets type U1
+        ArrayList uRocketList = new ArrayList();                        // list of rockets after loading all items
+        while(itemsList.size()>0){                                      // start if there is any item on list
+            U1 uRocket = new U1();                                      // create rocket to load it
 
-            int i=0;
+            int i=0;                                                    // in this loop i don't want to increment i everytime becouse when item is loaded it is removed from list and next item gets it's index , so in next step of loop next item will be at this index
             while((uRocket.carry < uRocket.carryLimit)&&(i< itemsList.size())) {
 
 
-                if (uRocket.canCarry(itemsList.get(i))) {
+                if (uRocket.canCarry(itemsList.get(i))) {               // carry item if u can
                     uRocket.carry(itemsList.get(i));
-                    itemsList.remove(i);
-                } else i++;
+                    itemsList.remove(i);                                // IMPORTANT removing item from list after loading on rocket
+                } else i++;                                             //incrementation ony if not loaded item of this index
 
             }
-            uRocketList.add(uRocket);
+            uRocketList.add(uRocket);                                   // when there is nothig more to load or rocket is full add rocket to return list
         }
 
-        return uRocketList;
+        return uRocketList;                                             // return list of loaded rockets
     }
 
-    ArrayList loadU2(ArrayList<Item> itemsList){
+    ArrayList loadU2(ArrayList<Item> itemsList){                        // redundant to previous type of rocket
         ArrayList uRocketList = new ArrayList();
         while(itemsList.size()>0){
-            U2 uRocket = new U2();
+            U2 uRocket = new U2();                                      // only there is diffrence
 
             int i=0;
             while((uRocket.carry < uRocket.carryLimit)&&(i< itemsList.size())) {
@@ -71,7 +71,7 @@ public class Simulation {
 
 int runSimulation(ArrayList<Rocket> uRocketList){
         int budget=0;
-        for(Rocket uRocket : uRocketList){
+        for(Rocket uRocket : uRocketList){                      //for each rocket try to launch and land. if failure try again and add cost of lost rocket to budget
             do{
                 budget += uRocket.cost;
             } while ((!(uRocket.launch()&&uRocket.land())));

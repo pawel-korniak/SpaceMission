@@ -6,7 +6,7 @@ public class Rocket implements SpaceShip{
     public boolean land(){
         return true;
     }
-    public boolean canCarry(Item item){
+    public boolean canCarry(Item item){                     // check if rocket can carry item from parameter
         if((carry+item.weight)<=carryLimit){
             return true;
         } else {
@@ -15,6 +15,6 @@ public class Rocket implements SpaceShip{
     }
     public void carry(Item item){
         carry+= item.weight;
-    }
+    }       // adding item weight to rocket's carried load
 
 }
