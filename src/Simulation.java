@@ -6,6 +6,8 @@ import java.util.Scanner;
 public class Simulation {
 
 
+
+
     ArrayList loadItems(int phase) throws FileNotFoundException {
         ArrayList itemsList;
         itemsList = new ArrayList();

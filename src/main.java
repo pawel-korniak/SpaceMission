@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 
+
+
 public class main {
+
     public static void main(String [] args) throws Exception{
 
         int budget=0;                                       //
@@ -12,7 +15,16 @@ public class main {
             ArrayList<Item> itemsList = new ArrayList();        // arraylist to keep items from txt and send to rocket methods
             ArrayList<Rocket> uRocketList = new ArrayList();    // list to keep loaded rockets and send to launch/land simulation
 
-            itemsList= symulate.loadItems(i);                   //loading items from txt to arraylist , i = phase
+            itemsList= symulate.loadItems(i);                       //loading items from txt to arraylist , i = phase
+
+
+
+            for (Item j:itemsList) {
+                System.out.println(j.name + " " + j.weight);
+
+            }
+
+
             uRocketList = symulate.loadU1(itemsList);           //loading rockets with items from list (removing each item from list after loading on rocket )
             budget += symulate.runSimulation(uRocketList);      //runing launch/land simulation to see what budget we need to send everything
 
@@ -53,6 +65,8 @@ public class main {
             System.out.println(uRocket.carry);
         }
 */
+
+
 
 
 
