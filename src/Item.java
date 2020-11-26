@@ -1,6 +1,6 @@
 public class Item implements Comparable{
-    String name;
-    int weight;
+    private String name;
+    private int weight;
 
 
 

@@ -46,27 +46,6 @@ public class main {
         System.out.println("Budget for U2 = $"+budget+" Million");
 
 
-        /*
-        for(int i=0;i< itemsList.size();i++){   //checking if list is full of items
-            Item item = new Item();
-            item = itemsList.get(i);
-            System.out.println(item.name+" = "+item.weight);
-        }
-
-         */
-
-/*
-        for(int i=0;i< itemsList.size();i++){   //checking if list is full of items
-            Item item = new Item();
-            item = itemsList.get(i);
-            System.out.println(item.name+" ==== "+item.weight);
-        }
-        for(int i=0;i< uRocketList.size();i++){   //checking load of each rocket
-            Rocket uRocket = new Rocket();
-            uRocket = uRocketList.get(i);
-            System.out.println(uRocket.carry);
-        }
-*/
 
 
 

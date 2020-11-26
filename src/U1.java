@@ -2,7 +2,7 @@ public class U1 extends Rocket {
     //int carry, carryLimit;
 
     public boolean launch() {
-        double chance = 5.0 * (carry / carryLimit);             // random number to see if launch succesfull
+        double chance = 5.0 * (getCarry() / getCarryLimit());             // random number to see if launch succesfull
         if((Math.random()*100)<=chance) {
             return false;
         }else {
@@ -11,7 +11,7 @@ public class U1 extends Rocket {
 
     }
     public boolean land(){
-        double chance = 1.0 * (carry / carryLimit);             // random number to see if landing succesfull
+        double chance = 1.0 * (getCarry() / getCarryLimit());             // random number to see if landing succesfull
         if((Math.random()*100)<=chance) {
             return false;
         }else {
@@ -19,8 +19,8 @@ public class U1 extends Rocket {
         }
     }
     U1(){
-        carry=0;                    // rocket constructor
-        carryLimit=8000;
-        cost = 100;
+        setCarry(0);                   // rocket constructor
+        setCarryLimit(8000);
+        setCost(100);
     }
 }

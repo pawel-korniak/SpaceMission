@@ -34,8 +34,9 @@ public class Simulation {
         while(itemsList.size()>0){                                      // start if there is any item on list
             U1 uRocket = new U1();                                      // create rocket to load it
 
-            int i=0;                                                    // in this loop i don't want to increment i everytime becouse when item is loaded it is removed from list and next item gets it's index , so in next step of loop next item will be at this index
-            while((uRocket.carry < uRocket.carryLimit)&&(i< itemsList.size())) {
+            int i=0;                                                    // in this loop i don't want to increment i everytime becouse when item is loaded
+                                                         // it is removed from list and next item gets it's index , so in next step of loop next item will be at this index
+            while((uRocket.getCarry() < uRocket.getCarryLimit())&&(i< itemsList.size())) {
 
 
                 if (uRocket.canCarry(itemsList.get(i))) {               // carry item if u can
@@ -56,7 +57,7 @@ public class Simulation {
             U2 uRocket = new U2();                                      // only there is diffrence
 
             int i=0;
-            while((uRocket.carry < uRocket.carryLimit)&&(i< itemsList.size())) {
+            while((uRocket.getCarry() < uRocket.getCarryLimit())&&(i< itemsList.size())) {
 
 
                 if (uRocket.canCarry(itemsList.get(i))) {
@@ -75,7 +76,7 @@ int runSimulation(ArrayList<Rocket> uRocketList){
         int budget=0;
         for(Rocket uRocket : uRocketList){                      //for each rocket try to launch and land. if failure try again and add cost of lost rocket to budget
             do{
-                budget += uRocket.cost;
+                budget += uRocket.getCost();
             } while ((!(uRocket.launch()&&uRocket.land())));
         }
         return budget;
