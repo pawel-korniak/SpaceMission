@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.util.Collections;
 
 
 public class main {
@@ -17,12 +17,14 @@ public class main {
 
             itemsList= symulate.loadItems(i);                       //loading items from txt to arraylist , i = phase
 
-
-
+            Collections.sort(itemsList);                        // descending sort list of items, this might reduce quantity of rockets needed to carry total load
+/*
             for (Item j:itemsList) {
-                System.out.println(j.name + " " + j.weight);
+                System.out.println(j.name + " " + j.weight);       // Test loop to check if everything is correct and sorted
 
             }
+
+ */
 
 
             uRocketList = symulate.loadU1(itemsList);           //loading rockets with items from list (removing each item from list after loading on rocket )
