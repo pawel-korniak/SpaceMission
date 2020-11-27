@@ -1,0 +1,25 @@
+
+Z	java:S106""9Replace this use of System.out or System.err by a logger.(›¡œøÿÿÿÿ8ï·‘®à.
+L
+java:S3740&"/Provide the parametrized type for this generic.(Ñ¶’­8ï·‘®à.
+L
+java:S3740"/Provide the parametrized type for this generic.(¦ ºñ8ï·‘®à.
+0
+java:S1220""Move this file to a named package.
+Q
+java:S3740'"/Provide the parametrized type for this generic.(í»÷ôüÿÿÿÿ8ï·‘®à.
+i	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(·š†‡8ï·‘®à.
+\
+java:S1854"?Remove this useless assignment to local variable "uRocketList".(¼»‡É8ï·‘®à.
+a
+java:S1854'"?Remove this useless assignment to local variable "uRocketList".(í»÷ôüÿÿÿÿ8ï·‘®à.
+L
+java:S3740"/Provide the parametrized type for this generic.(¼»‡É8ï·‘®à.
+Z	java:S106."9Replace this use of System.out or System.err by a logger.(Á¨Òşşÿÿÿÿ8ï·‘®à.
+Z
+java:S1854"=Remove this useless assignment to local variable "itemsList".(¦ ºñ8ï·‘®à.
+Z
+java:S1854&"=Remove this useless assignment to local variable "itemsList".(Ñ¶’­8ï·‘®à.
+n
+java:S1223"LRename this method to prevent any misunderstanding or make it a constructor.(ÙØ¤Şıÿÿÿÿ8ï·‘®à.
+]	java:S125"<This block of commented-out lines of code should be removed.(íŸéÛøÿÿÿÿ8ï·‘®à.
